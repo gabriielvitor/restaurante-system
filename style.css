@@ -1,0 +1,595 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #0e0e0e;
+    color: #1c1818;
+}
+
+/* HEADER */
+header {
+    background: #5f0909;
+    color: rgb(225, 220, 220);
+    text-align: center;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.2);
+}
+
+header h1 {
+    font-size: 32px;
+}
+
+.logoHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.logoHeader img {
+    width: 75px;
+    height: 75px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    background: white;
+
+    padding: 4px;
+}
+
+.logoHeader h1 {
+    margin: 0;
+    font-size: 34px;
+}
+
+#diaAtual {
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+/* CARDÁPIO */
+#cardapio {
+    width: 95%;
+    max-width: 1100px;
+
+    margin: 30px auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 25px;
+}
+
+.tituloCategoria{
+    grid-column: 1 / -1;
+    font-size: 34px;
+    font-weight: bold;
+    margin: 30px 0 10px;
+}
+
+/* CARD */
+.card {
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,.15);
+
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.card-conteudo {
+    padding: 18px;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 22px;
+}
+
+.precos {
+    display: flex;
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.preco {
+    background: #fff4d6;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.botao {
+    width: 100%;
+
+    background: #d62828;
+    color: white;
+
+    border: none;
+    border-radius: 0px;
+
+    padding: 14px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition: .3s;
+}
+
+.botao:hover {
+    background: #b71c1c;
+}
+
+/* CARRINHO */
+#carrinhoBotao {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    background: #d62828;
+    color: white;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+}
+
+/* JANELA */
+#janelaCarrinho {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.oculto {
+    display: none !important;
+}
+
+.conteudoCarrinho {
+    background: white;
+
+    width: 95%;
+    max-width: 600px;
+    max-height: 90vh;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    overflow: auto;
+}
+
+.conteudoCarrinho h2 {
+    margin-bottom: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+
+    margin-top: 12px;
+    padding: 12px;
+
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    
+    font-size: 15px;
+}
+
+textarea {
+    resize: none;
+    height: 90px;
+}
+
+#enviarPedido {
+    width: 100%;
+
+    margin-top: 20px;
+    padding: 15px;
+
+    background: #2e7d32;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+#fecharCarrinho {
+    width: 100%;
+
+    margin-top: 10px;
+    padding: 15px;
+
+    background: #888;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+/* RESPONSIVO */
+@media(max-width:700px) {
+    header h1 {
+        font-size: 26px;
+    }
+
+    .card img {
+        height: 190px;
+    }
+
+    #carrinhoBotao {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+}
+
+#listaTamanhos label, #listaAcompanhamentos label, #listaFeijoes label, #listaArroz label, #listaFarofa label, #listaMolho label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+#listaTamanhos input, #listaAcompanhamentos input, #listaFeijoes input, #listaArroz input, #listaFarofa input, #listaMolho input {
+    width: auto;
+    margin-right: 10px;
+}
+
+#taxaEntrega {
+    margin-top: 15px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    color: #d62828;
+}
+
+#modalProduto {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 20px;
+}
+
+#modalProduto.oculto {
+    display: none;
+}
+
+#modalProduto .conteudoCarrinho {
+    width: 100%;
+    max-width: 550px;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    background: #fff;
+    border-radius: 18px;
+
+    padding: 25px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+
+    animation: modal .25s ease;
+}
+
+@keyframes modal {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Imagem */
+#modalImagem {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+/* Nome */
+#modalNome {
+    font-size: 30px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+/* Descrição */
+#modalDescricao {
+    color: #666;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+/* Títulos */
+#modalProduto h3 {
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+/* Linhas */
+#modalProduto hr {
+    border: none;
+    border-top: 1px solid #eee;
+}
+
+#areaFeijoes, #areaArroz, #areaFarofa, #areaMolho {
+    margin-top: 20px;
+}
+
+#areaFeijoes h3 {
+    margin-bottom: 15px;
+    color: #222;
+}
+
+/* Opções */
+#listaTamanhos label, #listaAcompanhamentos label, #listaFeijoes label, #listaArroz label, #listaFarofa label, #listaMolho label {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    margin-bottom: 12px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+#listaTamanhos label:hover, #listaAcompanhamentos label:hover, #listaFeijoes label:hover, #listaArroz label:hover, #listaFarofa label:hover, #listaMolho label:hover {
+    background: #fff7f7;
+    border-color: #d62828;
+}
+
+/* Radio e checkbox */
+#listaTamanhos input, #listaAcompanhamentos input, #listaFeijoes input,  #bebidas input, #listaArroz input, #listaFarofa input, #listaMolho input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+
+/* Quantidade */
+#quantidadeProduto {
+    width: 100%;
+    padding: 15px;
+
+    font-size: 18px;
+
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Botões */
+#btnAdicionarCarrinho {
+    width: 100%;
+    padding: 16px;
+
+    background: #d62828;
+
+    color: #fff;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    margin-bottom: 12px;
+}
+
+#btnAdicionarCarrinho:hover {
+    background: #b51f1f;
+}
+
+#fecharModal {
+    width: 100%;
+    padding: 15px;
+
+    background: #ececec;
+
+    color: #333;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+#fecharModal:hover {
+    background: #d9d9d9;
+}
+
+/* Scroll */
+#modalProduto .conteudoCarrinho::-webkit-scrollbar {
+    width: 8px;
+}
+
+#modalProduto .conteudoCarrinho::-webkit-scrollbar-thumb {
+    background: #d62828;
+    border-radius: 20px;
+}
+
+/* Responsivo */
+@media(max-width:600px) {
+    #modalProduto .conteudoCarrinho {
+        padding: 18px;
+        border-radius: 15px;
+    }
+
+    #modalImagem {
+        height: 200px;
+    }
+
+    #modalNome {
+        font-size: 25px;
+    }
+
+    #modalProduto h3 {
+        font-size: 20px;
+    }
+}
+
+/* ===== COLE ESTE BLOCO NO FINAL DO style.css ===== */
+
+/* Botão do carrinho em formato de pílula: 🛒 2 • R$ 23,00 */
+#carrinhoBotao {
+    width: auto;
+    height: 60px;
+    padding: 0 24px;
+    border-radius: 30px;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+@media(max-width:700px) {
+    #carrinhoBotao {
+        width: auto;
+        height: 56px;
+        font-size: 17px;
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+/* Quantidade com botões − e + */
+.qtd {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qtd button {
+    flex: none;
+    width: 54px;
+    height: 54px;
+    border: none;
+    border-radius: 12px;
+    background: #d62828;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.qtd button:active {
+    background: #b51f1f;
+}
+
+.qtd #quantidadeProduto {
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Carrinho no canto esquerdo (a marca d'água do Netlify fica na direita) */
+#carrinhoBotao {
+    right: auto;
+    left: 25px;
+}
+
+@media(max-width:700px) {
+    #carrinhoBotao {
+        right: auto;
+        left: 15px;
+    }
+}
+
+/* Rodapé com assinatura */
+.rodape {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 20px 15px 100px; /* espaço embaixo para o botão do carrinho não cobrir o texto */
+}
+
+.rodape strong {
+    color: #ddd;
+}
+
+.rodape a {
+    color: #d62828;
+    text-decoration: none;
+}
+
+.rodape a:hover {
+    text-decoration: underline;
+}

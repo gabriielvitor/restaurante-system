@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Tempero do Chef</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logoHeader">
+            <img src="img/logo.jpg" alt="Tempero Chef">
+            <div>
+                <h1>Tempero Chef</h1>
+                <p id="diaAtual"></p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="cardapio"></section>
+    </main>
+
+    <footer class="rodape">
+        Site desenvolvido por <a href="https://github.com/gabriielvitor" target="_blank" rel="noopener"><strong>Gabriel Vitor</strong></a>
+    </footer>
+
+    <!-- Botão do carrinho: quantidade de itens e valor -->
+    <div id="carrinhoBotao">
+        &#x1F6D2; <span id="quantidadeCarrinho">0</span> &bull; R$ <span id="totalBotao">0,00</span>
+    </div>
+
+    <!-- Janela do Carrinho -->
+    <div id="janelaCarrinho" class="oculto">
+        <div class="conteudoCarrinho">
+            <h2>Seu Pedido</h2>
+            <div id="itensCarrinho"></div>
+            <h3 id="valorTotal">Total: R$ 0,00</h3>
+
+            <hr>
+
+            <input type="text" id="nome" placeholder="Seu nome" autocomplete="name">
+
+            <input type="tel" id="telefone" placeholder="Telefone com DDD" inputmode="tel" autocomplete="tel">
+
+            <label>Como deseja receber?</label>
+
+            <select id="tipoEntrega">
+                <option value="Entrega">Entrega</option>
+                <option value="Retirada">Retirada</option>
+            </select>
+
+            <select id="bairro">
+                <option value="">Selecione o bairro</option>
+                <option>Parque Fluminense</option>
+                <option>Vila Rosário</option>
+                <option>Parque Muisa</option>
+                <option>Lote XV</option>
+                <option>Pantanal</option>
+                <option>Suécia</option>
+                <option>Wona</option>
+                <option>Pilar</option>
+                <option>São José</option>
+            </select>
+
+            <p id="taxaEntrega">Taxa de entrega: R$ 0,00</p>
+
+            <input type="text" id="endereco" placeholder="Rua e número" autocomplete="street-address">
+
+            <input type="text" id="referencia" placeholder="Ponto de referência (opcional)">
+
+            <select id="pagamento">
+                <option>Dinheiro</option>
+                <option>QR na Máquina</option>
+                <option>Cartão</option>
+            </select>
+
+            <input type="text" id="troco" inputmode="decimal" placeholder="Troco para quanto? (deixe vazio se não precisa)">
+
+            <textarea id="observacao" placeholder="Observações"></textarea>
+
+            <button id="enviarPedido">Enviar Pedido</button>
+            <button id="fecharCarrinho">Fechar</button>
+        </div>
+    </div>
+
+    <!-- Modal do produto -->
+    <div id="modalProduto" class="oculto">
+        <div class="conteudoCarrinho">
+            <img id="modalImagem" style="width:100%;height:220px;object-fit:cover;border-radius:10px;">
+            <h2 id="modalNome"></h2>
+            <p id="modalDescricao"></p>
+
+            <hr><br>
+
+            <h3>Tamanho</h3>
+            <div id="listaTamanhos"></div>
+
+            <br>
+
+            <div id="areaAcompanhamentos">
+                <h3>Acompanhamentos</h3>
+                <div id="listaAcompanhamentos"></div>
+            </div>
+
+            <br>
+
+            <div id="areaFeijoes" style="display:none;">
+                <h3>Feijão</h3>
+                <div id="listaFeijoes"></div>
+            </div>
+
+            <br>
+
+            <div id="areaArroz" style="display:none;">
+                <h3>Arroz</h3>
+                <div id="listaArroz"></div>
+            </div>
+
+            <br>
+
+            <div id="areaFarofa" style="display:none;">
+                <h3>Farofa</h3>
+                <div id="listaFarofa"></div>
+            </div>
+
+            <br>
+
+            <div id="areaMolho" style="display:none;">
+                <h3>Molho</h3>
+                <div id="listaMolho"></div>
+            </div>
+
+            <br>
+
+            <h3>Quantidade</h3>
+            <div class="qtd">
+                <button type="button" id="btnMenos" aria-label="Diminuir">&minus;</button>
+                <input type="number" id="quantidadeProduto" value="1" min="1" inputmode="numeric">
+                <button type="button" id="btnMais" aria-label="Aumentar">+</button>
+            </div>
+            <br>
+
+            <button id="btnAdicionarCarrinho">Adicionar ao Carrinho</button>
+            <button id="fecharModal">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="dados.js"></script>
+    <script type="module" src="firebase.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
