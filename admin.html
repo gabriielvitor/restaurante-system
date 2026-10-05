@@ -6,172 +6,185 @@
 <title>Admin - Tempero Chef</title>
 <style>
 
-    * {
-        box-sizing:border-box;
-        font-family:Arial,sans-serif;
-        margin:0;
-        padding:0
-    }
+  * {
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+      margin:0;
+      padding:0
+  }
 
-    body {
-        background:#f3f3f3;
-        padding:15px
-    }
+  body {
+      background:#f3f3f3;
+      padding:15px
+  }
 
-    header { 
-        background:#5f0909;
-        color:#fff;
-        padding:18px;
-        border-radius:12px;
-        display:flex;
-        justify-content:
-        space-between;
-        align-items:center;
-        margin-bottom:15px
-    }
+  header { 
+      background:#5f0909;
+      color:#fff;
+      padding:18px;
+      border-radius:12px;
+      display:flex;
+      justify-content:
+      space-between;
+      align-items:center;
+      margin-bottom:15px
+  }
 
-    #login {
-        max-width:340px; 
-        margin:80px auto;
-        background:#fff;
-        padding:25px;
-        border-radius:14px
-    }
+  #login {
+      max-width:340px; 
+      margin:80px auto;
+      background:#fff;
+      padding:25px;
+      border-radius:14px
+  }
 
-    input,button {
-        width:100%; 
-        padding:12px;
-        margin-top:10px;
-        border-radius:8px;
-        border:1px solid #ccc;
-        font-size:15px
-    }
+  input,button {
+      width:100%; 
+      padding:12px;
+      margin-top:10px;
+      border-radius:8px;
+      border:1px solid #ccc;
+      font-size:15px
+  }
 
-    button {
-        background:#d62828;
-        color:#fff;
-        border:none;
-        cursor:pointer
-    }
+  button {
+      background:#d62828;
+      color:#fff;
+      border:none;
+      cursor:pointer
+  }
 
-    .filtros {
-        display:flex;
-        gap:8px;
-        margin-bottom:15px
-    }
+  .filtros {
+      display:flex;
+      gap:8px;
+      margin-bottom:15px
+  }
 
-    .filtros button {
-        margin:0;
-        background:#888
-    }
+  .filtros button {
+      margin:0;
+      background:#888
+  }
 
-    .filtros button.ativo {
-        background:#d62828
-    }
+  .filtros button.ativo {
+      background:#d62828
+  }
 
-    #lista {
-        display:grid;
-        grid-template-columns:repeat(auto-fill, minmax(300px,1fr));
-        gap:15px
-    }
+  #lista {
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(300px,1fr));
+      gap:15px
+  }
 
-    .pedido {
-        background:#fff;
-        border-radius:12px;
-        padding:15px;
-        border-left:6px solid #d62828
-    }
+  .pedido {
+      background:#fff;
+      border-radius:12px;
+      padding:15px;
+      border-left:6px solid #d62828
+  }
 
-    .pedido.preparando {
-        border-color:#f9a825
-    }
+  .pedido.preparando {
+      border-color:#f9a825
+  }
 
-    .pedido.pronto {
-        border-color:#1976d2
-    }
+  .pedido.pronto {
+      border-color:#1976d2
+  }
 
-    .pedido.entregue {
-        border-color:#2e7d32;
-        opacity:.7 
-    }
+  .pedido.entregue {
+      border-color:#2e7d32;
+      opacity:.7 
+  }
 
-    .pedido h3 {
-        margin-bottom:6px
-    }
+  .pedido h3 {
+      margin-bottom:6px
+  }
 
-    .pedido p {
-        margin:4px 0;
-        color:#444;
-        font-size:14px
-    }
+  .pedido p {
+      margin:4px 0;
+      color:#444;
+      font-size:14px
+  }
 
-    .itens {
-        margin:10px 0;
-        padding:10px;
-        background:#fafafa;
-        border-radius:8px
-    }
+  .itens {
+      margin:10px 0;
+      padding:10px;
+      background:#fafafa;
+      border-radius:8px
+  }
 
-    .acoes {
-        display:flex;
-        gap:6px;
-        margin-top:10px
-    }
+  .acoes {
+      display:flex;
+      gap:6px;
+      margin-top:10px
+  }
 
-    .acoes button {
-        margin:0;
-        padding:9px;
-        font-size:13px
-    }
+  .acoes button {
+      margin:0;
+      padding:9px;
+      font-size:13px
+  }
 
-    .oculto {
-        display:none!important
-    }
+  .oculto {
+      display:none!important
+  }
 
-    .abas {
-        display:flex;
-        gap:8px;
-        margin-bottom:15px
-    }
+  .abas {
+      display:flex;
+      gap:8px;
+      margin-bottom:15px
+  }
 
-    .abas button {
-        margin:0;
-        background:#888
-    }
+  .abas button {
+      margin:0;
+      background:#888
+  }
 
-    .abas button.ativo {
-        background:#d62828
-    }
+  .abas button.ativo {
+      background:#d62828
+  }
 
-    .item {
-        background:#fff;
-        border-radius:10px;
-        padding:12px;
-        margin-bottom:8px;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        gap:10px
-    }
+  .item {
+      background:#fff;
+      border-radius:10px;
+      padding:12px;
+      margin-bottom:8px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px
+  }
 
-    .item button {
-        width:auto; 
-        margin:0;
-        padding:9px 14px;
-        background:#d62828
-    }
+  .item button {
+      width:auto; 
+      margin:0;
+      padding:9px 14px;
+      background:#d62828
+  }
 
-    .item.pausado {
-        opacity:.6
-    }
+  .item.pausado {
+      opacity:.6
+  }
 
-    .item.pausado button {
-        background:#2e7d32
-    }
+  .item.pausado button {
+      background:#2e7d32
+  }
 
-    #cardapioAdmin h3 {
-        margin:18px 0 8px
-    }
+  #cardapioAdmin h3 {
+      margin:18px 0 8px
+  }
+
+  .pedido.cancelado { border-color:#999; opacity:.5 }
+
+  #caixaAdmin .cx-card { background:#fff; border-radius:12px; padding:15px; margin-bottom:12px }
+  #caixaAdmin h3 { margin-bottom:8px }
+  #caixaAdmin label { font-size:14px; color:#555; display:block; margin-top:8px }
+  #caixaAdmin textarea { width:100%; padding:12px; margin-top:10px; border-radius:8px; border:1px solid #ccc; font-size:15px; height:70px; resize:none }
+  .cx-linha { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px dashed #ddd; font-size:15px }
+  .cx-linha.forte { font-weight:bold; font-size:17px; border-bottom:none }
+  .cx-aviso { background:#fff3cd; color:#664d03; padding:10px; border-radius:8px; margin-bottom:12px; font-size:14px }
+  .cx-ok { color:#2e7d32 } .cx-ruim { color:#d62828 }
+  .cx-saida { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:6px 0 }
+  .cx-saida button { width:auto; margin:0; padding:6px 12px; background:#555; font-size:13px }
 
 </style>
 </head>
@@ -194,6 +207,7 @@
   <div class="abas" id="abas">
     <button data-a="pedidos" class="ativo">Pedidos</button>
     <button data-a="cardapio">Cardápio</button>
+    <button data-a="caixa">Caixa</button>
   </div>
 
   <div id="abaPedidos">
@@ -209,12 +223,42 @@
     <button onclick="reativarTodos()" style="background:#2e7d32;margin:0 0 10px">Reativar todos os itens</button>
     <div id="listaCardapio"></div>
   </div>
+
+  <div id="caixaAdmin" class="oculto">
+    <div class="cx-card">
+      <label>Data</label>
+      <input type="date" id="cxData">
+      <label>Fundo de caixa (troco inicial)</label>
+      <input id="cxFundo" inputmode="decimal" placeholder="0,00">
+    </div>
+
+    <div id="cxResumo"></div>
+
+    <div class="cx-card">
+      <h3>Saídas (compras, retiradas)</h3>
+      <div id="cxSaidas"></div>
+      <input id="cxSaidaDesc" placeholder="Descrição (ex: gás, gelo)">
+      <input id="cxSaidaValor" inputmode="decimal" placeholder="Valor (ex: 25,00)">
+      <button onclick="addSaida()" style="background:#555">Adicionar saída</button>
+    </div>
+
+    <div class="cx-card">
+      <label>Dinheiro contado na gaveta</label>
+      <input id="cxContado" inputmode="decimal" placeholder="0,00">
+      <div id="cxDiferenca" style="margin-top:10px"></div>
+      <textarea id="cxObs" placeholder="Observações do fechamento"></textarea>
+    </div>
+
+    <button onclick="fecharCaixa()" style="background:#2e7d32">Fechar caixa e salvar</button>
+    <button onclick="imprimirCaixa()" style="background:#555">Imprimir fechamento</button>
+    <button onclick="carregarCaixa()" style="background:#888">Atualizar</button>
+  </div>
 </div>
 
 <script src="dados.js"></script>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, collection, query, orderBy, onSnapshot, doc, updateDoc, setDoc, Timestamp, where }
+import { getFirestore, collection, query, orderBy, onSnapshot, doc, updateDoc, setDoc, getDoc, getDocs, Timestamp, where, serverTimestamp }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
@@ -294,7 +338,7 @@ function render() {
   const lista = pedidos.filter(p =>
     filtro === "todos" ? true :
     filtro === "entregue" ? p.status === "entregue" :
-    p.status !== "entregue"
+    p.status !== "entregue" && p.status !== "cancelado"
   );
 
   $("lista").innerHTML = lista.map(p => {
@@ -315,6 +359,7 @@ function render() {
       <p><b>Total: R$ ${moeda(p.total)}</b> ${p.taxa ? `(entrega R$ ${moeda(p.taxa)})` : ""}</p>
       <div class="acoes">
         ${prox ? `<button onclick="mudar('${p.id}','${prox[0]}')">${prox[1]}</button>` : ""}
+        ${p.status !== "entregue" && p.status !== "cancelado" ? `<button style="background:#999" onclick="cancelar('${p.id}')">Cancelar</button>` : ""}
         <button style="background:#555" onclick="imprimir('${p.id}')">Imprimir</button>
         <button style="background:#25d366" onclick="window.open('https://wa.me/55${fone}')">WhatsApp</button>
       </div>
@@ -323,6 +368,7 @@ function render() {
 }
 
 window.mudar = (id, status) => updateDoc(doc(db, "pedidos", id), { status });
+window.cancelar = id => { if (confirm("Cancelar este pedido?")) mudar(id, "cancelado"); };
 
 $("filtros").onclick = e => {
   if (!e.target.dataset.s) return;
@@ -395,6 +441,11 @@ $("abas").onclick = e => {
   document.querySelectorAll("#abas button").forEach(b => b.classList.toggle("ativo", b === e.target));
   $("abaPedidos").classList.toggle("oculto", a !== "pedidos");
   $("cardapioAdmin").classList.toggle("oculto", a !== "cardapio");
+  $("caixaAdmin").classList.toggle("oculto", a !== "caixa");
+  if (a === "caixa") {
+    if (!$("cxData").value) $("cxData").value = hojeISO();
+    carregarCaixa();
+  }
 };
 
 function imprimirHTML(html) {
@@ -455,6 +506,213 @@ window.imprimir = (id) => {
     <br><br>
   </body></html>`);
 };
+
+
+// ================= FECHAMENTO DE CAIXA =================
+const num = v => { const n = parseFloat(String(v || "").trim().replace(",", ".")); return isNaN(n) ? 0 : n; };
+const hojeISO = () => {
+  const d = new Date();
+  return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+};
+
+let cx = { pedidos: [], saidas: [] };
+
+async function carregarCaixa() {
+  const data = $("cxData").value || hojeISO();
+  const [a, m, d] = data.split("-").map(Number);
+  const ini = new Date(a, m - 1, d, 0, 0, 0, 0);
+  const fim = new Date(a, m - 1, d + 1, 0, 0, 0, 0);
+
+  try {
+    const snap = await getDocs(query(
+      collection(db, "pedidos"),
+      where("criadoEm", ">=", Timestamp.fromDate(ini)),
+      where("criadoEm", "<", Timestamp.fromDate(fim)),
+      orderBy("criadoEm")
+    ));
+    cx.pedidos = snap.docs.map(x => ({ id: x.id, ...x.data() }));
+
+    const f = await getDoc(doc(db, "fechamentos", data));
+    if (f.exists()) {
+      const x = f.data();
+      cx.saidas = x.saidas || [];
+      $("cxFundo").value = x.fundo ? moeda(x.fundo) : "";
+      $("cxContado").value = x.contado != null ? moeda(x.contado) : "";
+      $("cxObs").value = x.observacao || "";
+    } else {
+      cx.saidas = [];
+      $("cxFundo").value = "";
+      $("cxContado").value = "";
+      $("cxObs").value = "";
+    }
+    renderCaixa();
+  } catch (e) {
+    console.error("Erro ao carregar caixa:", e);
+    $("cxResumo").innerHTML = `<div class="cx-aviso">Erro ao carregar o caixa. Veja as regras do Firestore (coleção "fechamentos").</div>`;
+  }
+}
+window.carregarCaixa = carregarCaixa;
+
+function calcCaixa() {
+  const validos = cx.pedidos.filter(p => p.status !== "cancelado");
+  const r = {
+    qtd: validos.length,
+    cancelados: cx.pedidos.length - validos.length,
+    pendentes: validos.filter(p => p.status !== "entregue").length,
+    total: 0, taxas: 0, entregas: 0, retiradas: 0,
+    formas: { "Dinheiro": 0, "QR na Máquina": 0, "Cartão": 0, "Outros": 0 }
+  };
+  validos.forEach(p => {
+    const t = Number(p.total) || 0;
+    r.total += t;
+    r.taxas += Number(p.taxa) || 0;
+    p.tipo === "Entrega" ? r.entregas++ : r.retiradas++;
+    const pg = String(p.pagamento || "");
+    const f = pg.startsWith("Dinheiro") ? "Dinheiro" : (pg in r.formas ? pg : "Outros");
+    r.formas[f] += t;
+  });
+  r.saidas = cx.saidas.reduce((s, x) => s + x.valor, 0);
+  r.fundo = num($("cxFundo").value);
+  r.esperado = r.fundo + r.formas["Dinheiro"] - r.saidas;
+  const c = $("cxContado").value.trim();
+  r.contado = c === "" ? null : num(c);
+  r.diferenca = r.contado === null ? null : r.contado - r.esperado;
+  return r;
+}
+
+function renderCaixa() {
+  const r = calcCaixa();
+  const linha = (t, v, forte) => `<div class="cx-linha${forte ? " forte" : ""}"><span>${t}</span><span>R$ ${moeda(v)}</span></div>`;
+
+  let html = "";
+  if (r.pendentes > 0) {
+    html += `<div class="cx-aviso">⚠️ Existem ${r.pendentes} pedido(s) ainda não entregue(s). Eles estão somados no caixa.</div>`;
+  }
+
+  html += `<div class="cx-card"><h3>Vendas do dia</h3>
+    ${linha(`Pedidos (${r.qtd})`, r.total, true)}
+    ${linha(`Entregas (${r.entregas}) — taxas`, r.taxas)}
+    <div class="cx-linha"><span>Retiradas</span><span>${r.retiradas}</span></div>
+    ${r.cancelados ? `<div class="cx-linha"><span>Cancelados (fora da soma)</span><span>${r.cancelados}</span></div>` : ""}
+  </div>`;
+
+  html += `<div class="cx-card"><h3>Por forma de pagamento</h3>
+    ${linha("Dinheiro", r.formas["Dinheiro"])}
+    ${linha("QR na Máquina", r.formas["QR na Máquina"])}
+    ${linha("Cartão", r.formas["Cartão"])}
+    ${r.formas["Outros"] ? linha("Outros", r.formas["Outros"]) : ""}
+  </div>`;
+
+  html += `<div class="cx-card"><h3>Dinheiro na gaveta</h3>
+    ${linha("Fundo de caixa", r.fundo)}
+    ${linha("+ Vendas em dinheiro", r.formas["Dinheiro"])}
+    ${linha("− Saídas", r.saidas)}
+    ${linha("Esperado na gaveta", r.esperado, true)}
+  </div>`;
+  $("cxResumo").innerHTML = html;
+
+  $("cxSaidas").innerHTML = cx.saidas.map((s, i) =>
+    `<div class="cx-saida"><span>${esc(s.descricao)} — R$ ${moeda(s.valor)}</span><button onclick="removerSaida(${i})">Remover</button></div>`
+  ).join("") || `<p style="color:#777;font-size:14px">Nenhuma saída.</p>`;
+
+  if (r.diferenca === null) {
+    $("cxDiferenca").innerHTML = "";
+  } else if (Math.abs(r.diferenca) < 0.005) {
+    $("cxDiferenca").innerHTML = `<b class="cx-ok">✔ Caixa batendo certinho</b>`;
+  } else if (r.diferenca > 0) {
+    $("cxDiferenca").innerHTML = `<b class="cx-ok">Sobra: R$ ${moeda(r.diferenca)}</b>`;
+  } else {
+    $("cxDiferenca").innerHTML = `<b class="cx-ruim">Falta: R$ ${moeda(Math.abs(r.diferenca))}</b>`;
+  }
+}
+
+window.addSaida = () => {
+  const descricao = $("cxSaidaDesc").value.trim();
+  const valor = num($("cxSaidaValor").value);
+  if (!descricao || valor <= 0) { alert("Informe a descrição e um valor maior que zero."); return; }
+  cx.saidas.push({ descricao, valor });
+  $("cxSaidaDesc").value = "";
+  $("cxSaidaValor").value = "";
+  renderCaixa();
+};
+
+window.removerSaida = i => { cx.saidas.splice(i, 1); renderCaixa(); };
+
+window.fecharCaixa = async () => {
+  const r = calcCaixa();
+  const data = $("cxData").value || hojeISO();
+  if (r.pendentes > 0 && !confirm(`Ainda há ${r.pendentes} pedido(s) não entregue(s). Fechar mesmo assim?`)) return;
+  if (r.contado === null && !confirm("Você não informou o dinheiro contado. Fechar mesmo assim?")) return;
+
+  try {
+    await setDoc(doc(db, "fechamentos", data), {
+      data,
+      fundo: r.fundo,
+      saidas: cx.saidas,
+      contado: r.contado,
+      esperado: r.esperado,
+      diferenca: r.diferenca,
+      observacao: $("cxObs").value.trim(),
+      totais: {
+        pedidos: r.qtd, cancelados: r.cancelados, total: r.total, taxas: r.taxas,
+        entregas: r.entregas, retiradas: r.retiradas, formas: r.formas
+      },
+      fechadoEm: serverTimestamp()
+    });
+    alert("Caixa fechado e salvo!");
+  } catch (e) {
+    console.error(e);
+    alert("Erro ao salvar o fechamento. Verifique as regras do Firestore.");
+  }
+};
+
+window.imprimirCaixa = () => {
+  const r = calcCaixa();
+  const [a, m, d] = ($("cxData").value || hojeISO()).split("-");
+  const l = (t, v) => `<div style="display:flex;justify-content:space-between"><span>${t}</span><span>${v}</span></div>`;
+  const rs = v => "R$ " + moeda(v);
+
+  imprimirHTML(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Fechamento</title>
+  <style>
+    @page { size: 58mm auto; margin: 0; }
+    body { width: 32mm; margin: 0 auto; padding: 2mm; font-family: "Courier New", monospace; font-size: 12px; color: #000; }
+    .c { text-align: center; } .b { font-weight: bold; } .g { font-size: 15px; font-weight: bold; }
+    hr { border: none; border-top: 1px dashed #000; margin: 6px 0; }
+  </style></head><body>
+    <div class="c g">TEMPERO CHEF</div>
+    <div class="c b">FECHAMENTO DE CAIXA</div>
+    <div class="c">${d}/${m}/${a}</div>
+    <hr>
+    ${l("Pedidos", r.qtd)}
+    ${l("Entregas", r.entregas)}
+    ${l("Retiradas", r.retiradas)}
+    ${r.cancelados ? l("Cancelados", r.cancelados) : ""}
+    ${l("Taxas entrega", rs(r.taxas))}
+    <hr>
+    <div class="b">PAGAMENTOS</div>
+    ${l("Dinheiro", rs(r.formas["Dinheiro"]))}
+    ${l("QR Maquina", rs(r.formas["QR na Máquina"]))}
+    ${l("Cartao", rs(r.formas["Cartão"]))}
+    ${r.formas["Outros"] ? l("Outros", rs(r.formas["Outros"])) : ""}
+    <div class="g">TOTAL: ${rs(r.total)}</div>
+    <hr>
+    <div class="b">GAVETA</div>
+    ${l("Fundo", rs(r.fundo))}
+    ${l("+ Dinheiro", rs(r.formas["Dinheiro"]))}
+    ${l("- Saidas", rs(r.saidas))}
+    ${cx.saidas.map(s => `<div>&nbsp;&nbsp;${esc(s.descricao)}: ${rs(s.valor)}</div>`).join("")}
+    <div class="b">${l("Esperado", rs(r.esperado))}</div>
+    ${r.contado !== null ? l("Contado", rs(r.contado)) : ""}
+    ${r.diferenca !== null ? `<div class="b">${r.diferenca >= 0 ? "Sobra" : "Falta"}: ${rs(Math.abs(r.diferenca))}</div>` : ""}
+    ${$("cxObs").value.trim() ? `<hr><div>Obs: ${esc($("cxObs").value.trim())}</div>` : ""}
+    <br><br>
+  </body></html>`);
+};
+
+// Recalcula ao digitar e recarrega ao trocar a data
+$("cxFundo").addEventListener("input", renderCaixa);
+$("cxContado").addEventListener("input", renderCaixa);
+$("cxData").addEventListener("change", carregarCaixa);
 </script>
 </body>
 </html>

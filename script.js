@@ -11,7 +11,7 @@ let taxaAtual = 0;
 let produtoSelecionado = null;
 let pausados = [];
 
-const taxasEntrega = {
+const taxasEntrega = { 
     "Parque Fluminense": 5,
     "Vila Rosário": 5,
     "Parque Muisa": 5,
