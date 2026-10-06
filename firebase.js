@@ -3,12 +3,7 @@ import { getFirestore, collection, addDoc, serverTimestamp, doc, onSnapshot }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 const app = initializeApp({
-  apiKey: "AIzaSyC45qeQaDabtKcp9UwlMNJc5g8tOkjqRh0",
-  authDomain: "tempero-chef.firebaseapp.com",
-  projectId: "tempero-chef",
-  storageBucket: "tempero-chef.firebasestorage.app",
-  messagingSenderId: "239363220823",
-  appId: "1:239363220823:web:0da9af46344f54a0d34a12"
+  config do firabase
 });
 
 const db = getFirestore(app);
