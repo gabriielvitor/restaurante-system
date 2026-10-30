@@ -50,7 +50,7 @@ Feito com HTML, CSS e JavaScript puro, usando o Firebase como banco de dados e h
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git
+git clone https://github.com/gabriielvitor/restaurante-system.git
 ```
 
 ### 2. Configurar a loja
